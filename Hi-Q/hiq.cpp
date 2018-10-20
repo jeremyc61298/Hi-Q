@@ -181,7 +181,7 @@ void HiQ::initializeBoardStates(char initialHole)
 bool HiQ::findSolution(BoardState currentBoardState)
 {
 	bool solutionFound = false;
-	if (currentBoardState == solutionBoardState) { solutionFound = true;  }
+	if (currentBoardState == solutionBoardState) { solutionFound = true; }
 	else
 	{
 		mark(currentBoardState);
@@ -211,6 +211,7 @@ void HiQ::mark(BoardState currentBoardState)
 	markedSet.insert(currentBoardState.to_ullong());
 }
 
+// Given by Dr. Baber
 bool HiQ::marked(BoardState currentBoardState)
 {
 	bool found = false;
