@@ -35,7 +35,8 @@ public:
 
 private:
 	/* ---- VARIABLES ---- */
-	vector<vector<char>> between;
+	//vector<vector<char>> between;
+	char between[NUMHOLES + 1][NUMHOLES + 1];
 	map<char, short> index;
 	map<short, char> rindex;
 	typedef bitset<NUMHOLES + 1> BoardState;
@@ -102,7 +103,10 @@ void HiQ::initializeBetween()
 {
 	// At between[i][j], the value for the hole "between" i and j is found. 
 	// If you cannot jump from i to j, then the value is 0
-	between.resize(NUMHOLES + 1, vector<char>(NUMHOLES + 1, '0'));
+	//between.resize(NUMHOLES + 1, vector<char>(NUMHOLES + 1, '0'));
+	for (int i = 0; i <= NUMHOLES; i++)
+		for (int j = 0; j <= NUMHOLES; j++)
+			between[i][j] = '0';
 
 	setBetween('1', '9', '4');
 	setBetween('1', '3', '2');
@@ -305,7 +309,7 @@ int main()
 	{
 		game.play(vacantHole);
 		game.printResults(fout, vacantHole);	
-		cerr << "Solved at " << vacantHole << endl;
+
 		fin >> vacantHole;
 		if (vacantHole != '0')
 			fout << endl;
