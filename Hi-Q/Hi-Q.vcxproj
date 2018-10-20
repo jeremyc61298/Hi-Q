@@ -142,6 +142,7 @@
     <ClCompile Include="hiq.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="hiq.ans" />
     <None Include="hiq.in" />
     <None Include="hiq.out" />
   </ItemGroup>
